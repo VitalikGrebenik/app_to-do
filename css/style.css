@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background: #7c7c7c;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  padding: 10px;
+  margin-top: 50px;
+  max-width: 600px;
+  width: 100%;
+  height: 754px;
+  background-color: #505050;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.input__todo {
+  display: grid;
+  grid-template-columns: 9fr 2fr;
+  padding: 0 10px;
+  gap: 10px;
+}
+
+.input__title {
+  font-size: 50px;
+  padding: 10px 10px 20px 10px;
+}
+
+.task_list {
+  margin-top: 20px;
+  padding: 10px;
+}
+.task_list h2 {
+  font-size: 50px;
+}
+
+.task {
+  margin-top: 10px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 9fr 2fr;
+}
+
+.content_true input {
+  height: 50px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px rgb(99, 255, 110) solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 30px;
+  color: rgba(140, 140, 140, 0.592);
+  outline: 0;
+  text-decoration: line-through;
+}
+
+.task_checkbox input {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #32cd32;
+  border-radius: 4px;
+}
+
+.content input {
+  height: 50px;
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px rgb(255, 255, 255) solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 30px;
+  color: #fff;
+  outline: 0;
+}
+
+.action {
+  display: flex;
+  gap: 10px;
+}
+.action .task_checkbox {
+  width: 50px;
+  height: 50px;
+}
+.action button {
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  font-family: inherit;
+  font-size: 20px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.action button:hover {
+  background: rgb(255, 0, 0);
+}
+.action .edit:hover {
+  transition: 0.4s all ease-in;
+  color: rgb(126, 126, 126);
+  background: rgb(249, 255, 126);
+}
+.action .delete:hover {
+  transition: 0.4s all ease-in;
+  color: #fff;
+  background: rgb(255, 58, 58);
+}
+
+.form-control {
+  position: relative;
+  flex: 1;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px rgb(255, 255, 255) solid;
+  display: block;
+  width: 100%;
+  padding: 15px 0 5px 0px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: rgb(255, 255, 255);
+}
+
+.form-control label {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  pointer-events: none;
+}
+
+.form-control label span {
+  display: inline-block;
+  font-size: 30px;
+  min-width: 5px;
+  color: rgb(255, 255, 255);
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: rgb(255, 255, 255);
+  transform: translateY(-40px);
+}
+
+.btn_input {
+  margin-top: 7px;
+  padding-left: 15px;
+  width: 100%;
+  height: 50px;
+  font-family: inherit;
+  font-size: 20px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.btn_input span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn_input svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn_input:hover .svg-wrapper {
+  -webkit-animation: fly-1 0.6s ease-in-out infinite alternate;
+          animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.btn_input:hover svg {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+.btn_input:hover span {
+  transform: translateX(5em);
+}
+
+.btn_input:active {
+  transform: scale(0.95);
+}
+
+@-webkit-keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+.tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}/*# sourceMappingURL=style.css.map */
